@@ -1,0 +1,113 @@
+﻿@model IEnumerable<GameStore.Data.Data.Shop.Products>
+@{
+    ViewData["Title"] = "Sklep";
+    Layout = "~/Views/Shared/_ShopLayout.cshtml";
+}
+
+<body style="background-image: url('/lib/materialize/login.jpg'); background-size: cover">
+    <div class="container" style="margin-top:145px;">
+        <div class="row white rounded-left" style="border-radius:7px; min-height: 1400px; margin-bottom:100px;">
+            @await Html.PartialAsync("Filters", Model.FirstOrDefault())
+            <div class="col s12 m9">
+                <div class="card" style="border-radius:7px;">
+                    <div class="card-content" style="padding-top: 4px; padding-bottom: 4px; ">
+                        <form asp-action="Index" method="get">
+                            <div class="input-field">
+                                <input id="search" type="text" class="validate" name="search" value="@ViewData["searchString"]">
+                                <label for="search">Wpisz wyszukiwaną frazę...</label>
+                                <input type="submit" value="Szukaj" class="btn btn-default" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    @{
+                        int counter = 3;
+                    }
+                    @foreach (var product in Model)
+                    {
+                        if (counter % 3 == 0)
+                        {
+                            @Html.Raw("<div class=\"row\" style=\"background-color: white; margin: 50px 20px 0px 20px;\">")
+                        }
+                        counter = counter + 1;
+                        <div class="col s12 m4">
+                            <a href="@Url.Action("Details", "Shop", new { id = product.IdProduct })" style="color: black;">
+                                <div class="card hoverable small" style="max-width: 350px; min-height: 360px;border-radius: 7px 7px 0px 0px;">
+                                    <div class="card-image" style="border-radius: 7px 7px 0px 0px; ">
+                                        <img src="~/images/@product.Image.Name">
+                                    </div>
+                                    <div class="card-content" style="height: 150px; padding-top: 12px;">
+                                        <p><b>@product.Name</b></p>
+                                        <p>Cena @product.Price.ToString("0.00") zł</p>
+                                    </div>
+                                    <div class="card-action" style="max-height: 60px; padding-top: 10px;">
+                                        <a href="https://localhost:7238/Home/Index/5" class="btn btn-primary">dodaj do koszyka</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        if (counter % 3 == 0)
+                        {
+                            @Html.Raw("</div>")
+                        }
+                    }
+                </div>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+                <ul class="pagination center-align">
+                    @if (ViewBag.TotalPages > 1)
+                    {
+                        var search = ViewData["searchString"] as string;
+                        var selectedTypes = ViewData["selectedTypes"] as int[];
+                        var minPrice = ViewData["minPrice"] as int?;
+                        var maxPrice = ViewData["maxPrice"] as int?;
+
+                        if (ViewBag.CurrentPage > 1)
+                        {
+                            <li class="waves-effect"><a href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1, search, selectedTypes, minPrice, maxPrice })"><i class="material-icons">chevron_left</i></a></li>
+                        }
+                        else
+                        {
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                        }
+
+                        for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            if (i == ViewBag.CurrentPage)
+                            {
+                                <li class="active"><a href="#!">@i</a></li>
+                            }
+                            else
+                            {
+                                <li class="waves-effect"><a href="@Url.Action("Index", new { page = i, search, selectedTypes, minPrice, maxPrice })">@i</a></li>
+                            }
+                        }
+
+                        if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                        {
+                            <li class="waves-effect"><a href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1, search, selectedTypes, minPrice, maxPrice })"><i class="material-icons">chevron_right</i></a></li>
+                        }
+                        else
+                        {
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elem = document.querySelector('.collapsible.expandable');
+            var instance = M.Collapsible.init(elem, {
+              accordion: false
+            });
+         });
+    </script>
+</body>

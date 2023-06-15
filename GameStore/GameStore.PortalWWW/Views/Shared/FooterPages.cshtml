@@ -1,0 +1,9 @@
+﻿@model IEnumerable<GameStore.Data.Data.CMS.Page>
+
+
+      <ul>
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.TitleLink, item.Title, "Home", new {id = item.IdPage}, new { @class = "white-text" })</li>
+        }
+      </ul>

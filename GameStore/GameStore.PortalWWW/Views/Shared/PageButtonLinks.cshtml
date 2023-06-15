@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GameStore.Data.Data.CMS.Page>
+
+
+@switch (@Model.First().Title)
+{
+    //Login
+    @case "Login":
+        @foreach (var item in Model)
+            {
+                <button class="btn waves-effect waves-light center" type="submit" name="action">
+                        @Html.ActionLink(item.Content, item.Title, "Home", new {id = item.IdPage}, new { @class = "white-text" })
+                        <i class="fa fa-sign-in right"></i>
+                    </button>
+            }
+        break;
+
+    //Rejestracja
+    @case "Register":
+        @foreach (var item in Model)
+            {
+                <button class="btn waves-effect waves-light center" type="submit" name="action">
+                        @Html.ActionLink(item.Content, item.Title, "Home", new {id = item.IdPage}, new { @class = "white-text" })
+                        <i class="fa fa-sign-in right"></i>
+                    </button>
+            }
+        break;
+
+    //Default
+    default:
+        TempData["MessageError"] = "Wystąpił błąd.";
+        break;
+}
+

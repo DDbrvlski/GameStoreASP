@@ -1,0 +1,60 @@
+﻿@model IEnumerable<GameStore.Data.Data.CMS.Page>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Strona</h1><hr />
+<p>
+    <a class="btn btn-dark" asp-action="Create"><i class="bi bi-plus-circle"></i></a>
+</p>
+<table class="table">
+    <thead class="bg-dark text-white shadow">
+        <tr>
+            <th class = "rounded-left text-center">
+                @Html.DisplayNameFor(model => model.TitleLink)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th class = "rounded-right text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.TitleLink)
+            </td>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td class = "text-center">
+                <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.IdPage"><i class="bi bi-pencil"></i></a> |
+                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.IdPage"><i class="bi bi-eye-fill"></i></a> |
+                <a class="btn btn-dark" asp-action="Delete" asp-route-id="@item.IdPage"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

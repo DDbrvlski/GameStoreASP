@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1092e2d1-d19f-4f51-bb8b-be5ba1dc5c7e": {
+      "ProjectGuid": "1092e2d1-d19f-4f51-bb8b-be5ba1dc5c7e",
+      "DisplayName": "GameStore.PortalWWW",
+      "ColorIndex": 0
+    },
+    "0bb38780-d04c-46ca-a67e-df58f63044b0": {
+      "ProjectGuid": "0bb38780-d04c-46ca-a67e-df58f63044b0",
+      "DisplayName": "GameStore.Intranet",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "356ac66a-3aa2-4ef9-a307-f5cc39b26cdb": {
+      "ProjectGuid": "356ac66a-3aa2-4ef9-a307-f5cc39b26cdb",
+      "DisplayName": "GameStoreData",
+      "ColorIndex": 2
+    },
+    "fb7afd37-ebc5-4c80-87f3-fcd2a3046940": {
+      "ProjectGuid": "fb7afd37-ebc5-4c80-87f3-fcd2a3046940",
+      "DisplayName": "GameStore.Data",
+      "ColorIndex": 3
+    },
+    "23a0815a-2548-46b7-aa15-aa22db18f870": {
+      "ProjectGuid": "23a0815a-2548-46b7-aa15-aa22db18f870",
+      "DisplayName": "WebSite1",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

@@ -1,0 +1,93 @@
+﻿@model GameStore.Data.Data.CMS.PageContent
+
+@{
+    ViewData["Title"] = "Edit";
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Teksty - edytuj</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdPageContent" />
+            <div class="form-group">
+                <label asp-for="Link" class="control-label font-weight-bold"></label>
+                <input asp-for="Link" class="form-control" />
+                <span asp-validation-for="Link" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="Icon" class="control-label font-weight-bold"></label>
+                <input asp-for="Icon" class="form-control" />
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label font-weight-bold"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label font-weight-bold"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label font-weight-bold"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="Position" class="control-label font-weight-bold"></label>
+                <input asp-for="Position" class="form-control" />
+                <span asp-validation-for="Position" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="IdPage" class="control-label font-weight-bold"></label>
+                <select asp-for="IdPage" class="form-control" asp-items="ViewBag.Pages"></select>
+                <span asp-validation-for="IdPage" class="text-danger"></span>
+            </div>
+            <hr class="my-4"/>
+            <div class="form-group">
+                <label asp-for="Section" class="control-label font-weight-bold"></label>
+                <input asp-for="Section" class="form-control" />
+                <span asp-validation-for="Section" class="text-danger"></span>
+            </div>
+            <hr/>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i></button> |
+                <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

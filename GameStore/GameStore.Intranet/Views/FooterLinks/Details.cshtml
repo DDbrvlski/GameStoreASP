@@ -1,0 +1,44 @@
+﻿@model GameStore.Data.Data.CMS.FooterLinks
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Stopka link - szczegóły</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+    </dl>
+</div>
+<hr/>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdFooterLink" class="btn btn-dark"><i class="bi bi-pencil"></i></a> |
+    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+</div>
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

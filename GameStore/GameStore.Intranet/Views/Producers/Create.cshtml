@@ -1,0 +1,53 @@
+﻿@model GameStore.Data.Data.Shop.Producers
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Kategorie - dodaj nowy</h1>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label font-weight-bold"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="IdCategory" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdCategory" class="form-control" asp-items="ViewBag.Categories"></select>
+                        <span asp-validation-for="IdCategory" class="text-danger"></span>
+                    </div>
+                    <hr />
+                    <div class="form-group form-check">
+                        <label class="form-check-label font-weight-bold">
+                            <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-dark"><i class="bi bi-plus-lg"></i></button> |
+                        <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

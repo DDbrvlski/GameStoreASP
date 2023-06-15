@@ -1,0 +1,58 @@
+﻿@model GameStore.Data.Data.Shop.Products
+
+@using (Html.BeginForm("Index", "Shop", new { id = ViewData["categoryId"], search = ViewData["searchString"] }, FormMethod.Get))
+{
+    <div class="col s12 m3">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Filtry</span>
+                <ul class="collapsible expandable">
+                    <li>
+                        <div class="collapsible-header">Typ</div>
+                        <div class="collapsible-body">
+                            <div style="min-height:50px; height:auto; max-height:190px; overflow-y:auto">
+                                @await Html.PartialAsync("TypesOfProducts", (IEnumerable<GameStore.Data.Data.Shop.TypesOfProducts>) ViewBag.TypesOfProducts)
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Cena</div>
+                        <div class="collapsible-body">
+                            <div id="price-range"></div>
+                            <label for="price-min">Min Price:</label>
+                            <input type="number" id="price-min" name="minPrice" value="0" />
+
+                            <label for="price-max">Max Price:</label>
+                            <input type="number" id="price-max" name="maxPrice" value="" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Producent</div>
+                        <div class="collapsible-body">
+                            <div style="min-height:50px; height:auto; max-height:125px; overflow-y:auto">
+                                @await Html.PartialAsync("Producers", (IEnumerable<GameStore.Data.Data.Shop.Producers>) ViewBag.Producers)
+                            </div>
+                        </div>
+                    </li>
+                    @if((int)ViewData["categoryId"] == 4){
+                    <li>
+                        <div class="collapsible-header">Wydawca</div>
+                        <div class="collapsible-body">
+                            <div style="height:125px; max-height:125px; overflow-y:auto">
+                                @await Html.PartialAsync("Publishers", (IEnumerable<GameStore.Data.Data.Shop.Publishers>) ViewBag.Publishers)
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Platforma</div>
+                        <div class="collapsible-body">
+                            @await Html.PartialAsync("Platforms", (IEnumerable<GameStore.Data.Data.Shop.Platforms>) ViewBag.Platforms)
+                        </div>
+                    </li>
+                    }
+                </ul>
+                <button class="btn">Filtruj</button>
+            </div>
+        </div>
+    </div>
+}

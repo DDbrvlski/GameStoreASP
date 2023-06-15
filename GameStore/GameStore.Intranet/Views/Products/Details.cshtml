@@ -1,0 +1,86 @@
+﻿@model GameStore.Data.Data.Shop.Products
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Produkty - szczegóły</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IdCategory)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IdPlatform)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Platform.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IdProducer)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Producer.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IdPublisher)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Publisher.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IdTypesOfProducts)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.TypeOfProduct.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Image.ImageFile)
+        </dt>
+        <dd class="col-sm-10 my-2">
+            <img src="~/images/@Model.Image.Name" alt="@Model.Image.Name" style="height: 90px; width: 90px;"/>
+        </dd>
+    </dl>
+</div>
+<hr/>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdProduct" class="btn btn-dark"><i class="bi bi-pencil"></i></a> |
+    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+</div>
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

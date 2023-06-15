@@ -1,0 +1,108 @@
+﻿@model GameStore.Data.Data.Shop.Products
+@{
+    ViewData["Title"] = "Sklep";
+    Layout = "~/Views/Shared/_ShopLayout.cshtml";
+}
+<style>
+    .marginbottom {
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+</style>
+<body style="background-image: url('/lib/materialize/login.jpg'); background-size: cover">
+    <div class="container" style="margin-top: 145px;">
+        <div class="row white rounded-left" style="border-radius: 7px; min-height: 500px; margin-bottom: 100px;">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card z-depth-3" style="border-radius:7px;">
+                        <div class="card-image">
+                            <img src="~/images/@Model.Image.Name" style="border-radius:7px;" class="materialboxed" width="650">
+                        </div>
+                    </div>
+                    @await Html.PartialAsync("GalleryImages", (IEnumerable<GameStore.Data.Data.Media.Images>) ViewBag.GalleryImages)
+                </div>
+                <div class="col s12 m6">
+                    <div class="card z-depth-3" style="border-radius:7px;">
+                        <div class="card-content" style="font-family: verdana">
+                            <span class="card-title" style="font-weight:bold;margin-bottom:2rem;font-size:28px;">@Model.Name</span>
+                            @if (@Model.Category.Name == "Gry")
+                            {
+
+                                <label>
+                                    Oceny:
+                                    @Html.Raw(ViewBag.Rating)
+                                </label>
+                                <br />
+                                <label>
+                                    Platforma:
+                                    <div class="chip" style="margin-bottom:1rem;">@Model.Platform.Name</div>
+                                </label>
+                                <br />
+
+                                <label>
+                                    Gatunek:
+                                    <div class="chip" style="margin-bottom:1rem;">@Model.TypeOfProduct.Name</div>
+                                </label>
+                                <br />
+
+                                <label>
+                                    Wydawca:
+                                    <div class="chip" style="margin-bottom:1rem;">@Model.Publisher.Name</div>
+                                </label>
+                                <br />
+
+                            }
+                            else
+                            {
+                                <label>
+                                    Rodzaj:
+                                    <div class="chip" style="margin-bottom:1rem;">@Model.TypeOfProduct.Name</div>
+                                </label>
+                                <br />
+
+                            }
+                            <label>
+                                Producent:
+                                <div class="chip" style="margin-bottom:1rem;">@Model.Producer.Name</div>
+                            </label>
+                            <br />
+                            <label>
+                                Cena:
+                                <div class="chip" style="margin-bottom:1rem;">@Model.Price.ToString("0.00") zł</div>
+                            </label>
+                            <br />
+                            <label>Opis:</label>
+                            <p style="margin-bottom:1rem; font-size: 14px; font-family:Verdana;">@Model.Description</p>
+                            <hr />
+                            <a href="javascript:history.back()" class="waves-effect waves-light btn">Wróć</a>
+                            <a href="#" class="waves-effect waves-light btn">Dodaj do koszyka</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @await Html.PartialAsync("Comments", (IEnumerable<GameStore.Data.Data.Shop.RatesProductsAccounts>) ViewBag.Comments)
+        </div>
+    </div>
+    <!--Import jQuery before materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.materialboxed');
+            var options = {
+                // Specify the options for the Materialbox plugin
+            };
+            var instances = M.Materialbox.init(elems, options);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.galleryimage');
+            var options = {
+                // Specify the options for the Materialbox plugin
+            };
+            var instances = M.Materialbox.init(elems, options);
+        });
+    </script>
+</body>

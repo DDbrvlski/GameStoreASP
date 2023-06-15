@@ -1,0 +1,19 @@
+﻿@model IEnumerable<GameStore.Data.Data.CMS.News>
+
+    @foreach (var item in Model)
+{
+    <div class="col s12 m4" style="margin-top:60px;">
+        <div class="card hoverable small" style="max-width: 350px;">
+          <div class="card-image">
+            <img src="~/lib/materialize/cardbackground.jpg">
+            <span class="black-text card-title">@item.Title</span>
+          </div>
+          <div class="card-content">
+            <p>@Html.Raw(@item.Content)</p>
+          </div>
+          <div class="card-action">
+            <a>@Html.ActionLink(@item.Title, "Index", "News", new {id = item.IdNews}, null)</a>
+          </div>
+        </div>
+    </div>
+}

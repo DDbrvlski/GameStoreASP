@@ -1,0 +1,74 @@
+﻿@model GameStore.Data.Data.Media.Images
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Zdjęcie - dodaj nowe</h1>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IdImage" />
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label font-weight-bold"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="Image" class="control-label font-weight-bold"></label>
+                        <input asp-for="Image" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <h6 class="text-danger">Uwaga, dodanie zdjęcia spowoduje zignorowanie pól dla nazwy i URL !!!</h6>
+                        <label asp-for="ImageFile" class="control-label font-weight-bold"></label>
+                        <input asp-for="ImageFile" type="file" name="file" class="form-control-file" />
+                        <span asp-validation-for="ImageFile" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="Product.Name" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdProduct" class="form-control" asp-items="ViewBag.Products">
+                            <option value="">Wybierz produkt</option>
+                        </select>
+                        <span asp-validation-for="IdProduct" class="text-danger"></span>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label asp-for="Position" class="control-label font-weight-bold"></label>
+                        <input asp-for="Position" class="form-control" />
+                        <span asp-validation-for="Position" class="text-danger"></span>
+                    </div>
+                    <hr />
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i></button> |
+                        <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

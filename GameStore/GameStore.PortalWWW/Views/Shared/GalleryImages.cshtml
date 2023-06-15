@@ -1,0 +1,22 @@
+﻿@model IEnumerable<GameStore.Data.Data.Media.Images>
+
+@if (Model.Any())
+{
+    <div class="card z-depth-3" style="border-radius:1rem;">
+        <div class="card-image">
+            <div class="galeria">
+                @foreach (var item in Model)
+                {
+                    @if (item.Image == item.Name)
+                    {
+                        <div class="galleryimage" style="background-image: url('/images/@item.Name');"></div>
+                    }
+                    else
+                    {
+                        <div class="galleryimage" style="background-image: url('@item.Image');"></div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}

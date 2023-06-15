@@ -1,0 +1,100 @@
+﻿@model GameStore.Data.Data.Shop.Products
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Produkty - edytuj</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdProduct" />
+            <input type="hidden" asp-for="IdImage" />
+            <input type="hidden" asp-for="IsActive" />
+            <div class="form-group">
+                        <label asp-for="Name" class="control-label font-weight-bold"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label font-weight-bold"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label font-weight-bold"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="IdCategory" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdCategory" class="form-control" asp-items="ViewBag.Categories">
+                            <option value="">Wybierz kategorie</option>
+                        </select>
+                        <span asp-validation-for="IdCategory" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="IdPlatform" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdPlatform" class="form-control" asp-items="ViewBag.Platforms">
+                            <option value="">Wybierz platforme</option>
+                        </select>
+                        <span asp-validation-for="IdPlatform" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="IdPublisher" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdPublisher" class="form-control" asp-items="ViewBag.Publishers">
+                            <option value="">Wybierz wydawce</option>
+                        </select>
+                        <span asp-validation-for="IdPublisher" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="IdProducer" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdProducer" class="form-control" asp-items="ViewBag.Producers">
+                            <option value="">Wybierz producenta</option>
+                        </select>
+                        <span asp-validation-for="IdProducer" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="IdTypesOfProducts" class="control-label font-weight-bold"></label>
+                        <select asp-for="IdTypesOfProducts" class="form-control" asp-items="ViewBag.TypesOfProducts">
+                            <option value="">Wybierz typ</option>
+                        </select>
+                        <span asp-validation-for="IdTypesOfProducts" class="text-danger"></span>
+                    </div>
+            <hr/>
+                    <div class="form-group">
+                        <label asp-for="Image.ImageFile" class="control-label font-weight-bold"></label>
+                        <input asp-for="Image.ImageFile" type="file" name="file" class="form-control-file" />
+                        <span asp-validation-for="Image.ImageFile" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <hr/>
+<div class="form-group">
+                <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i></button> |
+                <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+            </div>
+    
+        </form>
+    </div>
+</div>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,293 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = GameStore.Intranet
+build_property.RootNamespace = GameStore.Intranet
+build_property.ProjectDir = C:\Users\Damian\Desktop\Zadania studia\SEMESTR 6\PIAB\Projekt 1\GameStore\GameStore.Intranet\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Damian\Desktop\Zadania studia\SEMESTR 6\PIAB\Projekt 1\GameStore\GameStore.Intranet
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyRGV0YWlsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyRGV0YWlsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyRGV0YWlsc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyRGV0YWlsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyRGV0YWlsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterLinks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyTGlua3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterLinks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyTGlua3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterLinks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyTGlua3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterLinks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyTGlua3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/FooterLinks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyTGlua3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Images/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Images/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Images/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Images/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Images/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1hZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/News/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/News/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/News/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/News/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/PageContent/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZUNvbnRlbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/PageContent/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZUNvbnRlbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/PageContent/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZUNvbnRlbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/PageContent/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZUNvbnRlbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/PageContent/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZUNvbnRlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Page/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Page/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Page/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Page/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Page/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Platforms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Platforms/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Platforms/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Platforms/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Platforms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Producers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Producers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Producers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Producers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Producers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Publishers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Publishers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Publishers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Publishers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Publishers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/TypesOfProducts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNPZlByb2R1Y3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/TypesOfProducts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNPZlByb2R1Y3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/TypesOfProducts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNPZlByb2R1Y3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/TypesOfProducts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNPZlByb2R1Y3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/TypesOfProducts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZXNPZlByb2R1Y3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.Intranet/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8r7ifryfaw

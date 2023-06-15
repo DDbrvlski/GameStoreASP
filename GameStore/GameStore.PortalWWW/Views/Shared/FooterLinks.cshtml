@@ -1,0 +1,10 @@
+﻿@model IEnumerable<GameStore.Data.Data.CMS.FooterLinks>
+
+
+      <ul>
+        @foreach (var item in Model)
+        {
+            <li><a class="white-text" href="@item.Link">@item.Title</a></li>
+
+        }
+      </ul>

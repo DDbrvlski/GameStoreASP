@@ -1,0 +1,11 @@
+﻿@model IEnumerable<GameStore.Data.Data.Shop.Publishers>
+
+    @foreach (var item in Model)
+    {
+        <p>
+      <label>
+        <input type="checkbox" name="selectedPublishers" value="@item.IdPublisher"/>
+        <span>@item.Name</span>
+      </label>
+    </p>
+    }

@@ -1,0 +1,74 @@
+﻿@model GameStore.Data.Data.CMS.PageContent
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Teksty - szczegóły</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Icon)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Icon)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Section)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Section)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Page.Title)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Page.Title)
+        </dd>
+    </dl>
+</div>
+<hr/>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdPage" class="btn btn-dark"><i class="bi bi-pencil"></i></a> |
+    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+</div>
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

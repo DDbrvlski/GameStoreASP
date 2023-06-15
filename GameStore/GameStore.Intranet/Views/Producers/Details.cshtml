@@ -1,0 +1,44 @@
+﻿@model GameStore.Data.Data.Shop.Producers
+
+@{
+    ViewData["Title"] = "Details";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Kategorie - szczegóły</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IdCategory)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+        <dt class = "col-sm-2 my-2">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd class = "col-sm-10 my-2">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+</div>
+<hr/>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdProducer" class="btn btn-dark"><i class="bi bi-pencil"></i></a> |
+    <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+</div>
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<GameStore.Data.Data.Media.Images>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="align-items-center justify-content-between mb-4">
+        <h1>Kategorie</h1><hr/>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create"><i class="bi bi-plus-circle"></i></a>
+</p>
+<table class="table">
+    <thead class="bg-dark text-white shadow">
+        <tr>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Product.Name)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th class = "text-center">
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th class = "rounded-right text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td class = "text-center">
+                @if (item.Image == item.Name)
+                    {
+                        <img src="~/images/@item.Name" alt="@item.Name" style="height: 90px; width: 90px;"/>
+                    }
+                    else
+                    {
+                        <img src="@item.Image" alt="@item.Name" style="height: 90px; width: 50%;"/>
+                    }
+            </td>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td class = "text-center">
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td class = "text-center">
+                <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.IdImage"><i class="bi bi-pencil"></i></a> |
+                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.IdImage"><i class="bi bi-eye-fill"></i></a> |
+                <a class="btn btn-dark" asp-action="Delete" asp-route-id="@item.IdImage"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

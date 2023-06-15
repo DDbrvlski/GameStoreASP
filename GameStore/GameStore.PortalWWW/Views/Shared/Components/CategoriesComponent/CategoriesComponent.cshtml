@@ -1,0 +1,10 @@
+﻿@model IEnumerable<GameStore.Data.Data.Shop.Categories>
+<li class='dropdown-trigger btn z-depth-0 transparent' style="background: rgba(128, 0, 128, .25); margin-top: 14px; text-transform:none; padding-bottom:50px;" data-target='dropdown1'>Sklep</li>
+
+<ul id='dropdown1' class='dropdown-content z-depth-4' style="border-radius:7px; background-color: rgba(128, 0, 128, 0.75); text-shadow: -1px -1px 0.1px black, 1px -1px 0.1px black, -1px 1px 0.1px black, 1px 1px 0.1px black;">
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(@item.Name, "Index", "Shop", new {id = item.IdCategory}, new { @class = "white-text" })</li>
+    }
+    
+</ul>
