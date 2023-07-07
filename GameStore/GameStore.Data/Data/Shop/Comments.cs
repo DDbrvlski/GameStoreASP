@@ -17,9 +17,6 @@ namespace GameStore.Data.Data.Shop
         [Display(Name = "Treść komentarza")]
         public string CommentContent { get; set; }
 
-        [Display(Name = "Czy aktywny?")]
-        public bool IsActive { get; set; }
-
 
     }
 }

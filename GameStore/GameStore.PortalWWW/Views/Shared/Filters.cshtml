@@ -34,21 +34,22 @@
                             </div>
                         </div>
                     </li>
-                    @if((int)ViewData["categoryId"] == 4){
-                    <li>
-                        <div class="collapsible-header">Wydawca</div>
-                        <div class="collapsible-body">
-                            <div style="height:125px; max-height:125px; overflow-y:auto">
-                                @await Html.PartialAsync("Publishers", (IEnumerable<GameStore.Data.Data.Shop.Publishers>) ViewBag.Publishers)
+                    @if ((int)ViewData["categoryId"] == 4)
+                    {
+                        <li>
+                            <div class="collapsible-header">Wydawca</div>
+                            <div class="collapsible-body">
+                                <div style="height:125px; max-height:125px; overflow-y:auto">
+                                    @await Html.PartialAsync("Publishers", (IEnumerable<GameStore.Data.Data.Shop.Publishers>) ViewBag.Publishers)
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">Platforma</div>
-                        <div class="collapsible-body">
-                            @await Html.PartialAsync("Platforms", (IEnumerable<GameStore.Data.Data.Shop.Platforms>) ViewBag.Platforms)
-                        </div>
-                    </li>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">Platforma</div>
+                            <div class="collapsible-body">
+                                @await Html.PartialAsync("Platforms", (IEnumerable<GameStore.Data.Data.Shop.Platforms>) ViewBag.Platforms)
+                            </div>
+                        </li>
                     }
                 </ul>
                 <button class="btn">Filtruj</button>

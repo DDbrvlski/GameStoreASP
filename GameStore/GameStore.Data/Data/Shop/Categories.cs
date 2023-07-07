@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Data.Data.Shop
 {
-    public class Categories
+    public class Categories : BaseEntity
     {
         [Key]
         public int IdCategory { get; set; }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Data.Data.CMS
 {
-    public class News
+    public class News : BaseEntity
     {
         [Key] //to co niżej jest kluczem podstawowym tabeli
         public int IdNews { get; set; }

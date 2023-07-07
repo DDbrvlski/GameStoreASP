@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GameStore.Data.Data.Helpers;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Data.Data.Account
 {
-    public class AccountType
+    public class AccountType : BaseEntity
     {
         [Key]
         public int IdAccountType { get; set; }

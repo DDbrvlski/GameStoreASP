@@ -7,157 +7,50 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GameStore.Data.Data;
 using GameStore.Data.Data.CMS;
+using GameStore.Data.Data.Shop;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController<News>
     {
-        private readonly GameStoreContext _context;
-
-        public NewsController(GameStoreContext context)
+        public NewsController(GameStoreContext context) : base(context)
         {
-            _context = context;
         }
 
-        // GET: News
-        public async Task<IActionResult> Index()
+        public override Task<News> CreateEntityWithImage(News entity, IFormFile file)
         {
-              return _context.News != null ? 
-                          View(await _context.News.ToListAsync()) :
-                          Problem("Entity set 'GameStoreContext.News'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: News/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<News> EditEntityWithImage(News entity, IFormFile file)
         {
-            if (id == null || _context.News == null)
-            {
-                return NotFound();
-            }
-
-            var news = await _context.News
-                .FirstOrDefaultAsync(m => m.IdNews == id);
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return View(news);
+            throw new NotImplementedException();
         }
 
-        // GET: News/Create
-        public IActionResult Create()
+        public override async Task<News> GetEntity(int id)
         {
-            return View();
+            return await _context.News.FirstOrDefaultAsync(p => p.IdNews == id);
         }
 
-        // POST: News/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdNews,TitleLink,Title,Content,Position")] News news)
+        public override async Task<int> GetEntityId(News entity)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(news);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(news);
+            return entity.IdNews;
         }
 
-        // GET: News/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public override Task<List<News>> GetEntityList()
         {
-            if (id == null || _context.News == null)
-            {
-                return NotFound();
-            }
-
-            var news = await _context.News.FindAsync(id);
-            if (news == null)
-            {
-                return NotFound();
-            }
-            return View(news);
+            return _context.News.ToListAsync();
         }
 
-        // POST: News/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdNews,TitleLink,Title,Content,Position")] News news)
+        public override async Task RemoveSelectedElement(int id)
         {
-            if (id != news.IdNews)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(news);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!NewsExists(news.IdNews))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(news);
+            var item = await GetEntity(id);
+            _context.News.Remove(item);
         }
 
-        // GET: News/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        protected override bool EntityExists(int id)
         {
-            if (id == null || _context.News == null)
-            {
-                return NotFound();
-            }
-
-            var news = await _context.News
-                .FirstOrDefaultAsync(m => m.IdNews == id);
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return View(news);
-        }
-
-        // POST: News/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.News == null)
-            {
-                return Problem("Entity set 'GameStoreContext.News'  is null.");
-            }
-            var news = await _context.News.FindAsync(id);
-            if (news != null)
-            {
-                _context.News.Remove(news);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool NewsExists(int id)
-        {
-          return (_context.News?.Any(e => e.IdNews == id)).GetValueOrDefault();
+            return (_context.News?.Any(x => x.IdNews == id)).GetValueOrDefault();
         }
     }
 }

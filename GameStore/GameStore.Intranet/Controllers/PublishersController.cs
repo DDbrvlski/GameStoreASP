@@ -10,160 +10,54 @@ using GameStore.Data.Data;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class PublishersController : Controller
+    public class PublishersController : BaseController<Publishers>
     {
-        private readonly GameStoreContext _context;
         private readonly List<Categories> _categories;
 
-        public PublishersController(GameStoreContext context)
+        public PublishersController(GameStoreContext context) : base(context)
         {
-            _context = context;
             _categories = _context.Categories.ToList();
         }
 
-        // GET: Publishers
-        public async Task<IActionResult> Index()
+        public override Task<Publishers> CreateEntityWithImage(Publishers entity, IFormFile file)
         {
-            return _context.Publishers != null ?
-                        View(await _context.Publishers.ToListAsync()) :
-                        Problem("Entity set 'GameStoreContext2023.Publishers'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: Publishers/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<Publishers> EditEntityWithImage(Publishers entity, IFormFile file)
         {
-            if (id == null || _context.Publishers == null)
-            {
-                return NotFound();
-            }
-
-            var Publishers = await _context.Publishers
-                .FirstOrDefaultAsync(m => m.IdPublisher == id);
-            if (Publishers == null)
-            {
-                return NotFound();
-            }
-
-            return View(Publishers);
+            throw new NotImplementedException();
         }
 
-        // GET: Publishers/Create
-        public IActionResult Create()
+        public override async Task<Publishers> GetEntity(int id)
         {
-            ViewBag.Categories = new SelectList(_categories, "IdCategory", "Name");
-            return View();
+            return await _context.Publishers.Include(x => x.Category).FirstOrDefaultAsync(p => p.IdPublisher == id);
         }
 
-        // POST: Publishers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdPublisher,Name,IdCategory,IsActive")] Publishers Publishers)
+        public override async Task<int> GetEntityId(Publishers entity)
+        {
+            return entity.IdPublisher;
+        }
+
+        public override Task<List<Publishers>> GetEntityList()
+        {
+            return _context.Publishers.Where(x => x.IsActive == true).Include(x => x.Category).ToListAsync();
+        }
+
+        public override async Task RemoveSelectedElement(int id)
+        {
+            var item = await GetEntity(id);
+            item.IsActive = false;
+        }
+
+        protected override bool EntityExists(int id)
+        {
+            return (_context.Publishers?.Any(x => x.IdPublisher == id)).GetValueOrDefault();
+        }
+        public override async Task SetSelectList()
         {
             ViewBag.Categories = new SelectList(_categories, "IdCategory", "Name");
-            if (!ModelState.IsValid)
-            {
-                _context.Add(Publishers);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(Publishers);
         }
 
-        // GET: Publishers/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            ViewBag.Categories = new SelectList(_categories, "IdCategory", "Name");
-            if (id == null || _context.Publishers == null)
-            {
-                return NotFound();
-            }
-
-            var Publishers = await _context.Publishers.FindAsync(id);
-            if (Publishers == null)
-            {
-                return NotFound();
-            }
-            return View(Publishers);
-        }
-
-        // POST: Publishers/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdPublisher,Name,IdCategory,IsActive")] Publishers Publishers)
-        {
-            ViewBag.Categories = new SelectList(_categories, "IdCategory", "Name");
-            if (id != Publishers.IdPublisher)
-            {
-                return NotFound();
-            }
-
-            if (!ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(Publishers);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PublishersExists(Publishers.IdPublisher))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(Publishers);
-        }
-
-        // GET: Publishers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Publishers == null)
-            {
-                return NotFound();
-            }
-
-            var Publishers = await _context.Publishers
-                .FirstOrDefaultAsync(m => m.IdPublisher == id);
-            if (Publishers == null)
-            {
-                return NotFound();
-            }
-
-            return View(Publishers);
-        }
-
-        // POST: Publishers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Publishers == null)
-            {
-                return Problem("Entity set 'GameStoreContext2023.Publishers'  is null.");
-            }
-            var Publishers = await _context.Publishers.FindAsync(id);
-            if (Publishers != null)
-            {
-                _context.Publishers.Remove(Publishers);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool PublishersExists(int id)
-        {
-            return (_context.Publishers?.Any(e => e.IdPublisher == id)).GetValueOrDefault();
-        }
     }
 }

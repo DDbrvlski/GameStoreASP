@@ -37,9 +37,9 @@
             @foreach (var item in Model)
             {
                 <button class="btn waves-effect waves-light center" type="submit" name="action">
-                        @item.Content
-                        <i class="mdi-content-send"></i>
-                    </button>
+                    @item.Content
+                    <i class="mdi-content-send"></i>
+                </button>
             }
         }
         break;
@@ -52,8 +52,8 @@
             {
                 <div class="input-field col s12 m12">
                     <i class="material-icons prefix">@item.Icon</i>
-                    <input id="icon_@item.Title" type="text" class="validate">
-                    <label for="icon_@item.Title">@item.Content</label>
+                    <input name="@item.Title" id="@item.Title" type="text" class="validate">
+                    <label for="@item.Title">@item.Content</label>
                 </div>
             }
         }
@@ -71,25 +71,21 @@
 
     //Rejestracja
     @case "Register":
-        if (@Model.First().Section == "Input")
+        @if (Model.First().Section == "Input")
         {
             @foreach (var item in Model)
             {
                 <div class="input-field col s12 m12">
                     <i class="material-icons prefix">@item.Icon</i>
-                    <input id="icon_@item.Title" type="text" class="validate">
-                    <label for="icon_@item.Title">@item.Content</label>
+                    <input name="@item.Title" id="@item.Title" type="text" class="validate">
+                    <label for="@item.Title">@item.Content</label>
+                    <span for="@item.Title" style="color:red">
+                        @if (TempData[item.Title + "Error"] != null)
+                        {
+                            @TempData[item.Title + "Error"]
+                        }
+                    </span>
                 </div>
-            }
-        }
-        if (@Model.First().Section == "Button")
-        {
-            foreach (var item in Model)
-            {
-                <button class="btn waves-effect waves-light center" type="submit" name="action">
-                    @item.Content
-                    <i class="fa fa-sign-in right"></i>
-                </button>
             }
         }
         break;

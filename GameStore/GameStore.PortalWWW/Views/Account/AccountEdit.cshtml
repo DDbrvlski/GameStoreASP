@@ -1,0 +1,55 @@
+﻿@model GameStore.Data.Data.Account.Accounts
+@{
+    ViewData["Title"] = "Edytowanie danych";
+}
+
+<body style="background-image: url('/lib/materialize/register.jpg'); background-size: cover">
+    <div class="container" style="margin-top:95px;">
+        <div class="row">
+            <div class="col s12 m6 offset-m3" style="margin-top:60px; margin-bottom:60px;">
+                <div class="card-panel z-depth-5">
+                    <div class="row">
+                        <div class="col s12">
+                            <h4>Edytowanie danych</h4>
+                        </div>
+                    </div>
+                    <form method="post" asp-controller="Account" asp-action="AccountEdit">
+                        <input type="hidden" asp-for="IdAccount" />
+                        <input type="hidden" asp-for="UserName" />
+                        <div class="row">
+                            <div class="col s6">
+                                <label asp-for="FirstName" class="control-label font-weight-bold"></label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                                <label asp-for="LastName" class="control-label font-weight-bold"></label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="col s6">
+                                <label asp-for="PhoneNumber" class="control-label font-weight-bold"></label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                <label asp-for="Email" class="control-label font-weight-bold"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                @{
+                                    var UserId = ViewBag.UserId;
+                                }
+                                <button type="submit" class="btn waves-effect waves-light">Zapisz zmiany</button>
+                                <a href="/Account/AccountDetails/@UserId" class="btn waves-effect waves-light">Anuluj</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!--col-->
+        </div><!--row-->
+    </div><!--conatiner-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+

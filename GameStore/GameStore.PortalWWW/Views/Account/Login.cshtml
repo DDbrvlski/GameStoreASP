@@ -1,0 +1,28 @@
+﻿@model GameStore.Data.Data.CMS.Page
+@{
+    ViewData["Title"] = @Model.TitleLink;
+}
+
+<body style="background-image: url('/lib/materialize/login.jpg'); background-size: cover">
+    <div class="container" style="margin-top:145px;">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card-panel z-depth-5" style="margin-top:70px;">
+                    <h4 class="center">@Model.Content</h4>
+                    <form asp-action="Login" asp-controller="Account" method="post" asp-route-id="">
+                        <div class="row">
+                            <div class="row">
+                                @await Html.PartialAsync("PageContent", (IEnumerable<GameStore.Data.Data.CMS.PageContent>) ViewBag.PageInputs)
+                            </div>
+                        </div><!--row-->
+                        @await Html.PartialAsync("PageButtonLinks", (IEnumerable<GameStore.Data.Data.CMS.Page>) ViewBag.PageButtons)
+                    </form>
+                </div><!--card-->
+            </div><!--col-->
+        </div><!--row-->
+    </div><!--conatiner-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+

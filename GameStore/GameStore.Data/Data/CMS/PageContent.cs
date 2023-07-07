@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using GameStore.Data.Data.Helpers;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Data.Data.CMS
 {
-    public class PageContent
+    public class PageContent : BaseEntity
     {
         [Key] //to co niżej jest kluczem podstawowym tabeli
         public int IdPageContent { get; set; }

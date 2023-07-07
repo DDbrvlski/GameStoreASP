@@ -1,0 +1,28 @@
+﻿@model GameStore.Data.Data.CMS.Page
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+<body style="background-image: url('/lib/materialize/register.jpg'); background-size: cover">
+    <div class="container" style="margin-top:95px;">
+        <div class="row">
+            <div class="col s12 m6 offset-m3" style="margin-top:60px; margin-bottom:60px;">
+                <div class="card-panel z-depth-5">
+                    <h4 class="center">@Model.Content</h4>
+                    <form asp-action="Register" asp-controller="Account" method="post">
+                        <div class="row">
+                            <div class="row">
+                                @await Html.PartialAsync("PageContent", (IEnumerable<GameStore.Data.Data.CMS.PageContent>) ViewBag.PageInputs)
+                            </div>
+                        </div><!--row-->
+                        @await Html.PartialAsync("PageButtonLinks", (IEnumerable<GameStore.Data.Data.CMS.Page>) ViewBag.PageButtons)
+                    </form>
+                </div><!--card-->
+            </div><!--col-->
+        </div><!--row-->
+    </div><!--conatiner-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+

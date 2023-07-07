@@ -21,8 +21,8 @@ namespace GameStore.Data.Data
         //Account
         public DbSet<Accounts> Accounts { get; set; }
         public DbSet<AccountType> AccountType { get; set; }
-        public DbSet<OrderHistory> OrderHistory { get; set; }
-        public DbSet<Orders> Orders { get; set; }
+        public DbSet<OrderElement> OrderElement { get; set; }
+        public DbSet<Order> Order { get; set; }
 
         //CMS
         public DbSet<FooterDetails> FooterDetails { get; set; }
@@ -44,6 +44,7 @@ namespace GameStore.Data.Data
         public DbSet<TypesOfProducts> TypesOfProducts { get; set; }
         public DbSet<Producers> Producers { get; set; }
         public DbSet<RatesProductsAccounts> RatesProductsAccounts { get; set; }
+        public DbSet<CartElement> CartElement { get; set; }
 
     }
 }

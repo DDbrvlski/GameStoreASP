@@ -10,154 +10,47 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class PageController : Controller
+    public class PageController : BaseController<Page>
     {
-        private readonly GameStoreContext _context;
-
-        public PageController(GameStoreContext context)
+        public PageController(GameStoreContext context) : base(context)
         {
-            _context = context;
         }
 
-        // GET: Page
-        public async Task<IActionResult> Index()
+        public override Task<Page> CreateEntityWithImage(Page entity, IFormFile file)
         {
-              return _context.Page != null ? 
-                          View(await _context.Page.ToListAsync()) :
-                          Problem("Entity set 'GameStoreContext.Page'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: Page/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<Page> EditEntityWithImage(Page entity, IFormFile file)
         {
-            if (id == null || _context.Page == null)
-            {
-                return NotFound();
-            }
-
-            var page = await _context.Page
-                .FirstOrDefaultAsync(m => m.IdPage == id);
-            if (page == null)
-            {
-                return NotFound();
-            }
-
-            return View(page);
+            throw new NotImplementedException();
         }
 
-        // GET: Page/Create
-        public IActionResult Create()
+        public override async Task<Page> GetEntity(int id)
         {
-            return View();
+            return await _context.Page.FirstOrDefaultAsync(p => p.IdPage == id);
         }
 
-        // POST: Page/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdPage,TitleLink,Title,Content,Position")] Page page)
+        public override async Task<int> GetEntityId(Page entity)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(page);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(page);
+            return entity.IdPage;
         }
 
-        // GET: Page/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public override Task<List<Page>> GetEntityList()
         {
-            if (id == null || _context.Page == null)
-            {
-                return NotFound();
-            }
-
-            var page = await _context.Page.FindAsync(id);
-            if (page == null)
-            {
-                return NotFound();
-            }
-            return View(page);
+            return _context.Page.ToListAsync();
         }
 
-        // POST: Page/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdPage,TitleLink,Title,Content,Position")] Page page)
+        public override async Task RemoveSelectedElement(int id)
         {
-            if (id != page.IdPage)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(page);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PageExists(page.IdPage))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(page);
+            var item = await GetEntity(id);
+            _context.Page.Remove(item);
         }
 
-        // GET: Page/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        protected override bool EntityExists(int id)
         {
-            if (id == null || _context.Page == null)
-            {
-                return NotFound();
-            }
-
-            var page = await _context.Page
-                .FirstOrDefaultAsync(m => m.IdPage == id);
-            if (page == null)
-            {
-                return NotFound();
-            }
-
-            return View(page);
+            return (_context.Page?.Any(x => x.IdPage == id)).GetValueOrDefault();
         }
 
-        // POST: Page/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Page == null)
-            {
-                return Problem("Entity set 'GameStoreContext.Page'  is null.");
-            }
-            var page = await _context.Page.FindAsync(id);
-            if (page != null)
-            {
-                _context.Page.Remove(page);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool PageExists(int id)
-        {
-          return (_context.Page?.Any(e => e.IdPage == id)).GetValueOrDefault();
-        }
     }
 }

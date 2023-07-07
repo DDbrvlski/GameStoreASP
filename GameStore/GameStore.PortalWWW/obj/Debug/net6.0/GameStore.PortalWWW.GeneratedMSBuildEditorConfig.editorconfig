@@ -16,6 +16,50 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Damian\Desktop\Zadania studia\SEMESTR 6\PIAB\Projekt 1\GameStore\GameStore.PortalWWW
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/AccountDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/AccountEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50RWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/OrderDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxPcmRlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/RateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSYXRlUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Cart/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,20 +68,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Home/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Home/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/News/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/PageContent/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZUNvbnRlbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Shared/Comments.cshtml]
@@ -98,10 +130,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Shared/Publishers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFB1Ymxpc2hlcnMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Shared/ShopCategories.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNob3BDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Damian/Desktop/Zadania studia/SEMESTR 6/PIAB/Projekt 1/GameStore/GameStore.PortalWWW/Views/Shared/TypesOfProducts.cshtml]

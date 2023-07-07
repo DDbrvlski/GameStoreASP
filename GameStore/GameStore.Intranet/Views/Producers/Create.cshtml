@@ -28,12 +28,6 @@
                         <span asp-validation-for="IdCategory" class="text-danger"></span>
                     </div>
                     <hr />
-                    <div class="form-group form-check">
-                        <label class="form-check-label font-weight-bold">
-                            <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
-                        </label>
-                    </div>
-                    <hr />
                     <div class="form-group">
                         <button type="submit" class="btn btn-dark"><i class="bi bi-plus-lg"></i></button> |
                         <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
@@ -48,6 +42,6 @@
 <!-- End of Main Content -->
 @section Scripts {
     @{
-    await Html.RenderPartialAsync("_ValidationScriptsPartial");
-}
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -12,19 +12,15 @@
     <link href="~/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 </head>
-
 <body>
     <nav class="z-depth-3" role="navigation" style="position: absolute; top: 0; left: 0; z-index: 1000;background: rgba(128, 0, 128, .25)  ">
         <div class="nav-wrapper">
             @await Html.PartialAsync("PageLinks", (IEnumerable<GameStore.Data.Data.CMS.Page>) ViewBag.Pages)
         </div>
     </nav>
-
-
     <div class="bodycontainer" style="min-height: 64vh;">
         @RenderBody()
     </div>
-
     <footer class="gradient page-footer footer-bottom z-depth-3">
         <div class="container">
             <div class="row">
@@ -47,8 +43,6 @@
             </div>
         </div>
     </footer>
-
-
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="~/lib/materialize/js/materialize.js"></script>

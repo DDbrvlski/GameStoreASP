@@ -54,6 +54,9 @@ namespace GameStore.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -84,6 +87,15 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdAccountType"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -93,23 +105,7 @@ namespace GameStore.Data.Migrations
                     b.ToTable("AccountType");
                 });
 
-            modelBuilder.Entity("GameStore.Data.Data.Account.OrderHistory", b =>
-                {
-                    b.Property<int>("IdOrderHistory")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOrderHistory"), 1L, 1);
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.HasKey("IdOrderHistory");
-
-                    b.ToTable("OrderHistory");
-                });
-
-            modelBuilder.Entity("GameStore.Data.Data.Account.Orders", b =>
+            modelBuilder.Entity("GameStore.Data.Data.Account.Order", b =>
                 {
                     b.Property<int>("IdOrder")
                         .ValueGeneratedOnAdd()
@@ -117,25 +113,70 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOrder"), 1L, 1);
 
-                    b.Property<int?>("IdAccount")
+                    b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdOrderHistory")
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("FullPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("IdAccount")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("OrderDate")
+                    b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("IdOrder");
 
                     b.HasIndex("IdAccount");
 
-                    b.HasIndex("IdOrderHistory");
+                    b.ToTable("Order");
+                });
 
-                    b.ToTable("Orders");
+            modelBuilder.Entity("GameStore.Data.Data.Account.OrderElement", b =>
+                {
+                    b.Property<int>("IdOrderElement")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOrderElement"), 1L, 1);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("IdOrder")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IdProduct")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("IdOrderElement");
+
+                    b.HasIndex("IdOrder");
+
+                    b.HasIndex("IdProduct");
+
+                    b.ToTable("OrderElement");
                 });
 
             modelBuilder.Entity("GameStore.Data.Data.CMS.FooterDetails", b =>
@@ -149,6 +190,15 @@ namespace GameStore.Data.Migrations
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(MAX)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -167,9 +217,18 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdFooterLink"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Link")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Position")
                         .HasColumnType("int");
@@ -194,6 +253,15 @@ namespace GameStore.Data.Migrations
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(MAX)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Position")
                         .IsRequired()
@@ -226,6 +294,15 @@ namespace GameStore.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(MAX)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Position")
                         .HasColumnType("int");
 
@@ -256,6 +333,9 @@ namespace GameStore.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(MAX)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(MAX)");
@@ -266,8 +346,14 @@ namespace GameStore.Data.Migrations
                     b.Property<int?>("IdPage")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Link")
                         .HasColumnType("nvarchar(MAX)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Position")
                         .HasColumnType("int");
@@ -294,6 +380,9 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdImage"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("IdProduct")
                         .HasColumnType("int");
 
@@ -302,6 +391,9 @@ namespace GameStore.Data.Migrations
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -316,6 +408,40 @@ namespace GameStore.Data.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("GameStore.Data.Data.Shop.CartElement", b =>
+                {
+                    b.Property<int>("IdCartElement")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCartElement"), 1L, 1);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("IdProduct")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IdSession")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("IdCartElement");
+
+                    b.HasIndex("IdProduct");
+
+                    b.ToTable("CartElement");
+                });
+
             modelBuilder.Entity("GameStore.Data.Data.Shop.Categories", b =>
                 {
                     b.Property<int>("IdCategory")
@@ -324,12 +450,18 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCategory"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -379,11 +511,17 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPlatform"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("IdCategory")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -404,11 +542,17 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProducer"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("IdCategory")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -428,6 +572,9 @@ namespace GameStore.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProduct"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -453,6 +600,9 @@ namespace GameStore.Data.Migrations
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -487,11 +637,17 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPublisher"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("IdCategory")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -511,9 +667,6 @@ namespace GameStore.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRate"), 1L, 1);
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Rating")
                         .IsRequired()
@@ -547,6 +700,9 @@ namespace GameStore.Data.Migrations
                     b.Property<int?>("IdRate")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
@@ -571,11 +727,17 @@ namespace GameStore.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdTypesOfProducts"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("IdCategory")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -597,19 +759,28 @@ namespace GameStore.Data.Migrations
                     b.Navigation("AccountType");
                 });
 
-            modelBuilder.Entity("GameStore.Data.Data.Account.Orders", b =>
+            modelBuilder.Entity("GameStore.Data.Data.Account.Order", b =>
                 {
                     b.HasOne("GameStore.Data.Data.Account.Accounts", "Account")
                         .WithMany("Orders")
                         .HasForeignKey("IdAccount");
 
-                    b.HasOne("GameStore.Data.Data.Account.OrderHistory", "OrderHistory")
-                        .WithMany("Orders")
-                        .HasForeignKey("IdOrderHistory");
-
                     b.Navigation("Account");
+                });
 
-                    b.Navigation("OrderHistory");
+            modelBuilder.Entity("GameStore.Data.Data.Account.OrderElement", b =>
+                {
+                    b.HasOne("GameStore.Data.Data.Account.Order", "Order")
+                        .WithMany("OrderElements")
+                        .HasForeignKey("IdOrder");
+
+                    b.HasOne("GameStore.Data.Data.Shop.Products", "Product")
+                        .WithMany()
+                        .HasForeignKey("IdProduct");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("GameStore.Data.Data.CMS.PageContent", b =>
@@ -622,6 +793,15 @@ namespace GameStore.Data.Migrations
                 });
 
             modelBuilder.Entity("GameStore.Data.Data.Media.Images", b =>
+                {
+                    b.HasOne("GameStore.Data.Data.Shop.Products", "Product")
+                        .WithMany()
+                        .HasForeignKey("IdProduct");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("GameStore.Data.Data.Shop.CartElement", b =>
                 {
                     b.HasOne("GameStore.Data.Data.Shop.Products", "Product")
                         .WithMany()
@@ -739,9 +919,9 @@ namespace GameStore.Data.Migrations
                     b.Navigation("RatesProductsAccounts");
                 });
 
-            modelBuilder.Entity("GameStore.Data.Data.Account.OrderHistory", b =>
+            modelBuilder.Entity("GameStore.Data.Data.Account.Order", b =>
                 {
-                    b.Navigation("Orders");
+                    b.Navigation("OrderElements");
                 });
 
             modelBuilder.Entity("GameStore.Data.Data.Shop.Products", b =>

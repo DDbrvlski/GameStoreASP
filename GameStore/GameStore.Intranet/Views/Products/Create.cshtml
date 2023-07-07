@@ -5,20 +5,20 @@
 }
 @if (TempData.ContainsKey("Message"))
 {
-            <script>
-                alert('@TempData["Message"]');
-            </script>
+    <script>
+        alert('@TempData["Message"]');
+    </script>
 }
 @if (!ViewData.ModelState.IsValid)
 {
-            <div class="alert alert-danger">
-                <ul>
+    <div class="alert alert-danger">
+        <ul>
             @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
             {
-                                <li>@error.ErrorMessage</li>
+                <li>@error.ErrorMessage</li>
             }
-                </ul>
-            </div>
+        </ul>
+    </div>
 }
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -37,19 +37,19 @@
                         <input asp-for="Name" class="form-control" />
                         <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="Price" class="control-label font-weight-bold"></label>
                         <input asp-for="Price" class="form-control" />
                         <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="Description" class="control-label font-weight-bold"></label>
                         <input asp-for="Description" class="form-control" />
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="IdCategory" class="control-label font-weight-bold"></label>
                         <select asp-for="IdCategory" class="form-control" asp-items="ViewBag.Categories">
@@ -57,7 +57,7 @@
                         </select>
                         <span asp-validation-for="IdCategory" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="IdPlatform" class="control-label font-weight-bold"></label>
                         <select asp-for="IdPlatform" class="form-control" asp-items="ViewBag.Platforms">
@@ -65,7 +65,7 @@
                         </select>
                         <span asp-validation-for="IdPlatform" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="IdPublisher" class="control-label font-weight-bold"></label>
                         <select asp-for="IdPublisher" class="form-control" asp-items="ViewBag.Publishers">
@@ -73,7 +73,7 @@
                         </select>
                         <span asp-validation-for="IdPublisher" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="IdProducer" class="control-label font-weight-bold"></label>
                         <select asp-for="IdProducer" class="form-control" asp-items="ViewBag.Producers">
@@ -81,7 +81,7 @@
                         </select>
                         <span asp-validation-for="IdProducer" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="IdTypesOfProducts" class="control-label font-weight-bold"></label>
                         <select asp-for="IdTypesOfProducts" class="form-control" asp-items="ViewBag.TypesOfProducts">
@@ -89,16 +89,16 @@
                         </select>
                         <span asp-validation-for="IdTypesOfProducts" class="text-danger"></span>
                     </div>
-            <hr/>
+                    <hr />
                     <div class="form-group">
                         <label asp-for="Image.ImageFile" class="control-label font-weight-bold"></label>
                         <input asp-for="Image.ImageFile" type="file" name="file" class="form-control-file" />
                         <span asp-validation-for="Image.ImageFile" class="text-danger font-weight-bold"></span>
                     </div>
-                    <hr/>
+                    <hr />
                     <div class="form-group">
                         <button type="submit" class="btn btn-dark"><i class="bi bi-plus-lg"></i></button> |
-                <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
+                        <a asp-action="Index" class="btn btn-dark"><i class="bi bi-arrow-left"></i></a>
                     </div>
                 </form>
             </div>
@@ -110,6 +110,6 @@
 <!-- End of Main Content -->
 @section Scripts {
     @{
-    await Html.RenderPartialAsync("_ValidationScriptsPartial");
-}
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

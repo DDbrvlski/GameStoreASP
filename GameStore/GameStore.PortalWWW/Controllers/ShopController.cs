@@ -2,47 +2,41 @@
 using GameStore.Data.Data.CMS;
 using GameStore.Data.Data.Media;
 using GameStore.Data.Data.Shop;
+using GameStore.PortalWWW.Models.BusinessLogic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace GameStore.PortalWWW.Controllers
 {
-    public class ShopController : Controller
+    public class ShopController : BaseController
     {
-        private readonly GameStoreContext _context;
-        private readonly List<FooterLinks> _flinks;
-        private readonly FooterDetails _fdetails;
-        private readonly List<Page> _pages;
-        private readonly List<PageContent> _pageContent;
         private readonly List<TypesOfProducts> _typesOfProducts;
         private readonly List<Producers> _producers;
         private readonly List<Publishers> _publishers;
         private readonly List<Platforms> _platforms;
         private List<Products> _products;
         private List<Products> _productsToDisplay;
-        public ShopController(GameStoreContext context)
+        public ShopController(GameStoreContext context, AccountB accountB) : base(context, accountB)
         {
-            _context = context;
-            _flinks = _context.FooterLinks.ToList();
-            _fdetails = _context.FooterDetails.First();
-            _pages = _context.Page.OrderBy(p => p.Position).ToList();
-            _pageContent = _context.PageContent.ToList();
             _typesOfProducts = _context.TypesOfProducts.ToList();
             _producers = _context.Producers.ToList();
             _publishers = _context.Publishers.ToList();
             _platforms = _context.Platforms.ToList();
             _products = _context.Products.Include(t => t.Category).Include(x => x.Image).ToList();
         }
+        #region Widoki
         public async Task<IActionResult> Index(int id, string search, int[] selectedTypes, int[] selectedProducers, int[] selectedPlatforms, int[] selectedPublishers, int minPrice, int maxPrice, int page = 1, int pageSize = 3)
         {
             ViewData["searchString"] = search;
             ViewData["selectedTypes"] = selectedTypes;
+            ViewData["selectedPlatforms"] = selectedPlatforms;
+            ViewData["selectedProducers"] = selectedProducers;
             ViewData["minPrice"] = minPrice;
             ViewData["maxPrice"] = maxPrice;
             ViewData["categoryId"] = id;
 
-            _productsToDisplay = _products.Where(x => x.IdCategory == id).ToList();
+            _productsToDisplay = _products.Where(x => x.IdCategory == id).Where(x => x.IsActive == true).ToList();
 
             // Search
             if (!String.IsNullOrEmpty(search))
@@ -93,7 +87,6 @@ namespace GameStore.PortalWWW.Controllers
             SetFilterViewBags(id);
 
             _productsToDisplay = _productsToDisplay.Skip((page - 1) * pageSize).Take(pageSize).ToList();
-            ViewBag.Products = _productsToDisplay;
             return View(_productsToDisplay);
         }
         public async Task<IActionResult> Details(int? id)
@@ -115,7 +108,8 @@ namespace GameStore.PortalWWW.Controllers
                 double numberOfAllRates = allRatesAndCommentsForProduct.Count();
                 double allPositiveRates = allRatesAndCommentsForProduct.Count(r => r.Rate.Rating == "Pozytywna");
 
-                double rating = (allPositiveRates / numberOfAllRates) * 100;
+                double ratingTemp = (allPositiveRates / numberOfAllRates) * 100;
+                int rating = (int) ratingTemp;
                 switch (rating)
                 {
                     case > 60:
@@ -137,14 +131,15 @@ namespace GameStore.PortalWWW.Controllers
                 message = "<div class='chip' style='margin: 0 0 1rem 0;'>Brak ocen</div>";
             }
 
-            
+
 
             ViewBag.Rating = message;
 
             ViewBag.GalleryImages = _context.Images.Where(x => x.IsActive == true && x.IdProduct == id && x.Position > 0).OrderBy(p => p.Position).ToList();
             return View(await _context.Products.Include(t => t.Category).Include(x => x.Image).FirstOrDefaultAsync(p => p.IdProduct == id));
         }
-
+        #endregion
+        #region Funkcje
         private void SetFilterViewBags(int id)
         {
             ViewBag.TypesOfProducts = _typesOfProducts.Where(x => x.IdCategory == id);
@@ -152,19 +147,6 @@ namespace GameStore.PortalWWW.Controllers
             ViewBag.Producers = _producers.Where(x => x.IdCategory == id);
             ViewBag.Platforms = _platforms.Where(x => x.IdCategory == id);
         }
-
-        private void SetViewBags()
-        {
-            ViewBag.FootLinks = _flinks;
-            ViewBag.FootDetails = _fdetails;
-            ViewBag.Pages = _pages;
-            ViewBag.FooterLinksTitle = GetContentBySectionAndTitle("Footer_title", "Links");
-            ViewBag.FooterMediaTitle = GetContentBySectionAndTitle("Footer_title", "Media");
-            ViewBag.FooterSiteTitle = _pages.First().Content;
-        }
-        private string GetContentBySectionAndTitle(string section, string title)
-        {
-            return _pageContent.First(x => x.Section == section && x.Title == title).Content;
-        }
+        #endregion
     }
 }

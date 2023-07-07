@@ -19,12 +19,9 @@
             @await Html.PartialAsync("PageLinks", (IEnumerable<GameStore.Data.Data.CMS.Page>) ViewBag.Pages)
         </div>
     </nav>
-
-
     <div class="bodycontainer" style="min-height: 64vh;">
         @RenderBody()
     </div>
-
     <footer class="gradient page-footer footer-bottom z-depth-3">
         <div class="container">
             <div class="row">
@@ -47,8 +44,6 @@
             </div>
         </div>
     </footer>
-
-
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="~/lib/materialize/js/materialize.js"></script>

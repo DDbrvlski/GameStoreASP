@@ -7,157 +7,50 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GameStore.Data.Data.Shop;
 using GameStore.Data.Data;
+using GameStore.Data.Data.CMS;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class CategoriesController : Controller
+    public class CategoriesController : BaseController<Categories>
     {
-        private readonly GameStoreContext _context;
-
-        public CategoriesController(GameStoreContext context)
+        public CategoriesController(GameStoreContext context) : base(context)
         {
-            _context = context;
         }
 
-        // GET: Categories
-        public async Task<IActionResult> Index()
+        public override Task<Categories> CreateEntityWithImage(Categories entity, IFormFile file)
         {
-              return _context.Categories != null ? 
-                          View(await _context.Categories.ToListAsync()) :
-                          Problem("Entity set 'GameStoreContext2023.Categories'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: Categories/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<Categories> EditEntityWithImage(Categories entity, IFormFile file)
         {
-            if (id == null || _context.Categories == null)
-            {
-                return NotFound();
-            }
-
-            var categories = await _context.Categories
-                .FirstOrDefaultAsync(m => m.IdCategory == id);
-            if (categories == null)
-            {
-                return NotFound();
-            }
-
-            return View(categories);
+            throw new NotImplementedException();
         }
 
-        // GET: Categories/Create
-        public IActionResult Create()
+        public override async Task<Categories> GetEntity(int id)
         {
-            return View();
+            return await _context.Categories.FirstOrDefaultAsync(p => p.IdCategory == id);
         }
 
-        // POST: Categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCategory,Name,Description,IsActive")] Categories categories)
+        public override async Task<int> GetEntityId(Categories entity)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(categories);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(categories);
+            return entity.IdCategory;
         }
 
-        // GET: Categories/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public override Task<List<Categories>> GetEntityList()
         {
-            if (id == null || _context.Categories == null)
-            {
-                return NotFound();
-            }
-
-            var categories = await _context.Categories.FindAsync(id);
-            if (categories == null)
-            {
-                return NotFound();
-            }
-            return View(categories);
+            return _context.Categories.ToListAsync();
         }
 
-        // POST: Categories/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCategory,Name,Description,IsActive")] Categories categories)
+        public override async Task RemoveSelectedElement(int id)
         {
-            if (id != categories.IdCategory)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(categories);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CategoriesExists(categories.IdCategory))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(categories);
+            var item = await GetEntity(id);
+            item.IsActive = false;
         }
 
-        // GET: Categories/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        protected override bool EntityExists(int id)
         {
-            if (id == null || _context.Categories == null)
-            {
-                return NotFound();
-            }
-
-            var categories = await _context.Categories
-                .FirstOrDefaultAsync(m => m.IdCategory == id);
-            if (categories == null)
-            {
-                return NotFound();
-            }
-
-            return View(categories);
-        }
-
-        // POST: Categories/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Categories == null)
-            {
-                return Problem("Entity set 'GameStoreContext2023.Categories'  is null.");
-            }
-            var categories = await _context.Categories.FindAsync(id);
-            if (categories != null)
-            {
-                _context.Categories.Remove(categories);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool CategoriesExists(int id)
-        {
-          return (_context.Categories?.Any(e => e.IdCategory == id)).GetValueOrDefault();
+            return (_context.Categories?.Any(x => x.IdCategory == id)).GetValueOrDefault();
         }
     }
 }

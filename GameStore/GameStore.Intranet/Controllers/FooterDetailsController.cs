@@ -10,154 +10,47 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class FooterDetailsController : Controller
+    public class FooterDetailsController : BaseController<FooterDetails>
     {
-        private readonly GameStoreContext _context;
-
-        public FooterDetailsController(GameStoreContext context)
+        public FooterDetailsController(GameStoreContext context) : base(context)
         {
-            _context = context;
         }
 
-        // GET: FooterDetails
-        public async Task<IActionResult> Index()
+        public override Task<FooterDetails> CreateEntityWithImage(FooterDetails entity, IFormFile file)
         {
-            return _context.FooterDetails != null ?
-                        View(await _context.FooterDetails.ToListAsync()) :
-                        Problem("Entity set 'GameStoreContext.FooterDetails'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: FooterDetails/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<FooterDetails> EditEntityWithImage(FooterDetails entity, IFormFile file)
         {
-            if (id == null || _context.FooterDetails == null)
-            {
-                return NotFound();
-            }
-
-            var FooterDetails = await _context.FooterDetails
-                .FirstOrDefaultAsync(m => m.IdFooterDetail == id);
-            if (FooterDetails == null)
-            {
-                return NotFound();
-            }
-
-            return View(FooterDetails);
+            throw new NotImplementedException();
         }
 
-        // GET: FooterDetails/Create
-        public IActionResult Create()
+        public override async Task<FooterDetails> GetEntity(int id)
         {
-            return View();
+            return await _context.FooterDetails.FirstOrDefaultAsync(p => p.IdFooterDetail == id);
         }
 
-        // POST: FooterDetails/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdFooterDetail,Title,Content")] FooterDetails FooterDetails)
+        public override async Task<int> GetEntityId(FooterDetails entity)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(FooterDetails);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(FooterDetails);
+            return entity.IdFooterDetail;
         }
 
-        // GET: FooterDetails/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public override Task<List<FooterDetails>> GetEntityList()
         {
-            if (id == null || _context.FooterDetails == null)
-            {
-                return NotFound();
-            }
-
-            var FooterDetails = await _context.FooterDetails.FindAsync(id);
-            if (FooterDetails == null)
-            {
-                return NotFound();
-            }
-            return View(FooterDetails);
+            return _context.FooterDetails.ToListAsync();
         }
 
-        // POST: FooterDetails/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdFooterDetail,Title,Content")] FooterDetails FooterDetails)
+        public override async Task RemoveSelectedElement(int id)
         {
-            if (id != FooterDetails.IdFooterDetail)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(FooterDetails);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FooterDetailsExists(FooterDetails.IdFooterDetail))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(FooterDetails);
+            var item = await GetEntity(id);
+            _context.FooterDetails.Remove(item);
         }
 
-        // GET: FooterDetails/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        protected override bool EntityExists(int id)
         {
-            if (id == null || _context.FooterDetails == null)
-            {
-                return NotFound();
-            }
-
-            var FooterDetails = await _context.FooterDetails
-                .FirstOrDefaultAsync(m => m.IdFooterDetail == id);
-            if (FooterDetails == null)
-            {
-                return NotFound();
-            }
-
-            return View(FooterDetails);
+            return (_context.FooterDetails?.Any(x => x.IdFooterDetail == id)).GetValueOrDefault();
         }
 
-        // POST: FooterDetails/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.FooterDetails == null)
-            {
-                return Problem("Entity set 'GameStoreContext.FooterDetails'  is null.");
-            }
-            var FooterDetails = await _context.FooterDetails.FindAsync(id);
-            if (FooterDetails != null)
-            {
-                _context.FooterDetails.Remove(FooterDetails);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool FooterDetailsExists(int id)
-        {
-            return (_context.FooterDetails?.Any(e => e.IdFooterDetail == id)).GetValueOrDefault();
-        }
     }
 }

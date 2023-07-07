@@ -6,28 +6,38 @@
     //Login
     @case "Login":
         @foreach (var item in Model)
+        {
+            if (item.Title == "Login")
             {
                 <button class="btn waves-effect waves-light center" type="submit" name="action">
-                        @Html.ActionLink(item.Content, item.Title, "Home", new {id = item.IdPage}, new { @class = "white-text" })
-                        <i class="fa fa-sign-in right"></i>
-                    </button>
+                    @item.Content
+                    <i class="fa fa-sign-in right"></i>
+                </button>
             }
+            else
+            {
+                <button class="btn waves-effect waves-light center" type="submit" name="action">
+                    @Html.ActionLink(item.Content, item.Title, "Account", new {id = item.IdPage}, new { @class = "white-text" })
+                    <i class="fa fa-sign-in right"></i>
+                </button>
+            }
+        }
         break;
 
     //Rejestracja
     @case "Register":
         @foreach (var item in Model)
-            {
-                <button class="btn waves-effect waves-light center" type="submit" name="action">
-                        @Html.ActionLink(item.Content, item.Title, "Home", new {id = item.IdPage}, new { @class = "white-text" })
-                        <i class="fa fa-sign-in right"></i>
-                    </button>
-            }
+        {
+            <button class="btn waves-effect waves-light center" type="submit" name="action">
+                @item.Content
+                <i class="fa fa-sign-in right"></i>
+            </button>
+        }
         break;
 
     //Default
     default:
-        TempData["MessageError"] = "Wystąpił błąd.";
+        TempData["MessageError"] = "Wystapil blad.";
         break;
 }
 

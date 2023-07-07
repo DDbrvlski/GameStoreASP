@@ -10,154 +10,46 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class FooterLinksController : Controller
+    public class FooterLinksController : BaseController<FooterLinks>
     {
-        private readonly GameStoreContext _context;
-
-        public FooterLinksController(GameStoreContext context)
+        public FooterLinksController(GameStoreContext context) : base(context)
         {
-            _context = context;
         }
 
-        // GET: FooterLinks
-        public async Task<IActionResult> Index()
+        public override Task<FooterLinks> CreateEntityWithImage(FooterLinks entity, IFormFile file)
         {
-            return _context.FooterLinks != null ?
-                        View(await _context.FooterLinks.ToListAsync()) :
-                        Problem("Entity set 'GameStoreContext.FooterLinks'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: FooterLinks/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<FooterLinks> EditEntityWithImage(FooterLinks entity, IFormFile file)
         {
-            if (id == null || _context.FooterLinks == null)
-            {
-                return NotFound();
-            }
-
-            var FooterLinks = await _context.FooterLinks
-                .FirstOrDefaultAsync(m => m.IdFooterLink == id);
-            if (FooterLinks == null)
-            {
-                return NotFound();
-            }
-
-            return View(FooterLinks);
+            throw new NotImplementedException();
         }
 
-        // GET: FooterLinks/Create
-        public IActionResult Create()
+        public override async Task<FooterLinks> GetEntity(int id)
         {
-            return View();
+            return await _context.FooterLinks.FirstOrDefaultAsync(p => p.IdFooterLink == id);
         }
 
-        // POST: FooterLinks/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdFooterLink,Title,Position,Link")] FooterLinks FooterLinks)
+        public override async Task<int> GetEntityId(FooterLinks entity)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(FooterLinks);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(FooterLinks);
+            return entity.IdFooterLink;
         }
 
-        // GET: FooterLinks/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public override Task<List<FooterLinks>> GetEntityList()
         {
-            if (id == null || _context.FooterLinks == null)
-            {
-                return NotFound();
-            }
-
-            var FooterLinks = await _context.FooterLinks.FindAsync(id);
-            if (FooterLinks == null)
-            {
-                return NotFound();
-            }
-            return View(FooterLinks);
+            return _context.FooterLinks.ToListAsync();
         }
 
-        // POST: FooterLinks/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdFooterLink,Title,Position,Link")] FooterLinks FooterLinks)
+        public override async Task RemoveSelectedElement(int id)
         {
-            if (id != FooterLinks.IdFooterLink)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(FooterLinks);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FooterLinksExists(FooterLinks.IdFooterLink))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(FooterLinks);
+            var item = await GetEntity(id);
+            _context.FooterLinks.Remove(item);
         }
 
-        // GET: FooterLinks/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        protected override bool EntityExists(int id)
         {
-            if (id == null || _context.FooterLinks == null)
-            {
-                return NotFound();
-            }
-
-            var FooterLinks = await _context.FooterLinks
-                .FirstOrDefaultAsync(m => m.IdFooterLink == id);
-            if (FooterLinks == null)
-            {
-                return NotFound();
-            }
-
-            return View(FooterLinks);
-        }
-
-        // POST: FooterLinks/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.FooterLinks == null)
-            {
-                return Problem("Entity set 'GameStoreContext.FooterLinks'  is null.");
-            }
-            var FooterLinks = await _context.FooterLinks.FindAsync(id);
-            if (FooterLinks != null)
-            {
-                _context.FooterLinks.Remove(FooterLinks);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool FooterLinksExists(int id)
-        {
-            return (_context.FooterLinks?.Any(e => e.IdFooterLink == id)).GetValueOrDefault();
+            return (_context.FooterLinks?.Any(x => x.IdFooterLink == id)).GetValueOrDefault();
         }
     }
 }

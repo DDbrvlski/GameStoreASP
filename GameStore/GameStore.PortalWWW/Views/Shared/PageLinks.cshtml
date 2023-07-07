@@ -7,15 +7,28 @@
         {
             if (item.TitleLink == "Sklep")
             {
-                @await Component.InvokeAsync("CategoriesComponent");
-                
+                @await Component.InvokeAsync("CategoriesComponent")
             }
-            if (item.Title != "Register" && item.TitleLink != "Sklep")
+            else if (item.Title != "Register" && item.TitleLink != "Sklep" && item.Title != "Login")
             {
                 <li>@Html.ActionLink(item.TitleLink, item.Title, "Home", new {id = item.IdPage}, new { @class = "white-text" })</li>
             }
-
+            else if (item.Title == "Login")
+            {
+                @if (ViewContext.HttpContext.Request.Cookies["AuthCookie"] != null)
+                {
+                    var UserId = ViewBag.UserId;
+                    <li><a href="/Account/AccountDetails/@UserId" style="color:white">Moje Konto</a></li>
+                    <li><a href="/Account/Logout" style="color:white">Wyloguj</a></li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink(item.TitleLink, item.Title, "Account", new {id = item.IdPage}, new { @class = "white-text" })</li>
+                }
+            }
         }
+        <li><a asp-action="Index" asp-controller="Cart" style="color:white"><i class="material-icons left" style="margin-right:0px;">shopping_cart</i>(<span id="amount" style="margin-left:0px;padding-left:0px;"></span>)</a></li>
+
     </ul>
 
     <ul id="nav-mobile" class="sidenav">
@@ -23,20 +36,42 @@
         {
             if (item.Title != "Register")
             {
-                <li>@Html.ActionLink(item.TitleLink, item.Title, "Home", new {id = item.IdPage}, null)</li>
+                <li>@Html.ActionLink(item.TitleLink, item.Title, "Account", new {id = item.IdPage}, null)</li>
             }
         }
     </ul>
     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.dropdown-trigger');
         var options = {
             alignment: 'right',
-      hover: true,
-      coverTrigger: false
+            hover: true,
+            coverTrigger: false
         };
         var instances = M.Dropdown.init(elems, options);
-      });</script>
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Cart/GetAmountOfItems",
+            method: "GET",
+            success: function (response) {
+                var amount = response.amount;
+                $("#amount").text(amount);
+
+                if (amount === 0) {
+                    $("#cart-button").prop("disabled", true);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+</script>

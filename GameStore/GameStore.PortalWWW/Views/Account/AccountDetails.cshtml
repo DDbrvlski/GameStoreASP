@@ -1,0 +1,50 @@
+﻿@model GameStore.Data.Data.Account.Accounts
+@{
+    ViewData["Title"] = "Panel Użytkownika";
+}
+
+<body style="background-image: url('/lib/materialize/register.jpg'); background-size: cover">
+    <div class="container" style="margin-top:95px;">
+        <div class="row">
+            <div class="col s12 m6 offset-m3" style="margin-top:60px; margin-bottom:60px;">
+                <div class="card-panel z-depth-5 user-panel">
+                    <div class="row">
+                        <div class="col s12">
+                            <h4>Panel Użytkownika</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="user-info">
+                                <p><strong>Imię:</strong> @Model.FirstName</p>
+                                <p><strong>Nazwisko:</strong> @Model.LastName</p>
+                                <p><strong>Adres email:</strong> @Model.Email</p>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="user-info">
+                                <p><strong>Nazwa użytkownika:</strong> @Model.UserName</p>
+                                <p><strong>Numer telefonu:</strong> @Model.PhoneNumber</p>
+                                <p><strong>Data utworzenia konta:</strong> @Model.CreatedDate.ToShortDateString()</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            @{
+                                var UserId = ViewBag.UserId;
+                            }
+                            <a href="/Account/Orders/@UserId" class="waves-effect waves-light btn">Wszystkie zamówienia</a>
+                            <a href="/Account/AccountEdit/@UserId" class="waves-effect waves-light btn">Edytuj Profil</a>
+                            <a href="/Account/ChangePassword/@UserId" class="waves-effect waves-light btn">Zmień Hasło</a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--col-->
+        </div><!--row-->
+    </div><!--conatiner-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+

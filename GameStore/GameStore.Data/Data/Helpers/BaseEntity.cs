@@ -5,11 +5,12 @@ namespace GameStore.Data.Data.Helpers
 {
     public class BaseEntity
     {
-        [Required(ErrorMessage = "Data utworzenia jest wymagana")]
         [Display(Name = "Data dodania")]
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
         [Display(Name = "Data zmodyfikowania")]
-        public DateTime ModifiedDate { get; set; }
+        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+
+        public bool IsActive { get; set; } = true;
     }
 }

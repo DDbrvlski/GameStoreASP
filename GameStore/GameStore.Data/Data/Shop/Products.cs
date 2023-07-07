@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Data.Data.Shop
 {
-    public class Products
+    public class Products : BaseEntity
     {
         [Key]
         public int IdProduct { get; set; }
@@ -22,9 +22,6 @@ namespace GameStore.Data.Data.Shop
 
         [Display(Name = "Opis")]
         public string Description { get; set; }
-
-        [Display(Name = "Czy Aktywny")]
-        public bool IsActive { get; set; }
         
         //Kategoria
         [Display(Name = "Kategoria")]

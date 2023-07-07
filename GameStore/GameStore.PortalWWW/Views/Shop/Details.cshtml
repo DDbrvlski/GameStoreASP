@@ -27,7 +27,6 @@
                             <span class="card-title" style="font-weight:bold;margin-bottom:2rem;font-size:28px;">@Model.Name</span>
                             @if (@Model.Category.Name == "Gry")
                             {
-
                                 <label>
                                     Oceny:
                                     @Html.Raw(ViewBag.Rating)
@@ -38,19 +37,16 @@
                                     <div class="chip" style="margin-bottom:1rem;">@Model.Platform.Name</div>
                                 </label>
                                 <br />
-
                                 <label>
                                     Gatunek:
                                     <div class="chip" style="margin-bottom:1rem;">@Model.TypeOfProduct.Name</div>
                                 </label>
                                 <br />
-
                                 <label>
                                     Wydawca:
                                     <div class="chip" style="margin-bottom:1rem;">@Model.Publisher.Name</div>
                                 </label>
                                 <br />
-
                             }
                             else
                             {
@@ -59,7 +55,6 @@
                                     <div class="chip" style="margin-bottom:1rem;">@Model.TypeOfProduct.Name</div>
                                 </label>
                                 <br />
-
                             }
                             <label>
                                 Producent:
@@ -75,7 +70,7 @@
                             <p style="margin-bottom:1rem; font-size: 14px; font-family:Verdana;">@Model.Description</p>
                             <hr />
                             <a href="javascript:history.back()" class="waves-effect waves-light btn">Wróć</a>
-                            <a href="#" class="waves-effect waves-light btn">Dodaj do koszyka</a>
+                            <a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@Model.IdProduct" class="waves-effect waves-light btn">Dodaj do koszyka</a>
                         </div>
                     </div>
                 </div>
@@ -88,19 +83,17 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.materialboxed');
             var options = {
-                // Specify the options for the Materialbox plugin
             };
             var instances = M.Materialbox.init(elems, options);
         });
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.galleryimage');
             var options = {
-                // Specify the options for the Materialbox plugin
             };
             var instances = M.Materialbox.init(elems, options);
         });

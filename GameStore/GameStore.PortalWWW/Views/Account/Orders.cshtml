@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GameStore.Data.Data.Account.Order>
+@{
+    ViewData["Title"] = "Zamówienia";
+}
+
+<body style="background-image: url('/lib/materialize/register.jpg'); background-size: cover">
+    <div class="container" style="margin-top:95px;">
+        <div class="row">
+            <div class="col s12 m6 offset-m3" style="margin-top:60px; margin-bottom:60px;">
+                <div class="card-panel z-depth-5">
+                    <div class="row">
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th class="center">Numer zamówienia</th>
+                                    <th class="center">Cena</th>
+                                    <th class="center">Ilość produktów</th>
+                                    <th class="center"><a href="javascript:history.back()" class="waves-effect waves-light btn">Wróć</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="center">@item.IdOrder</td>
+                                        <td class="center">@String.Format("{0:F}", item.FullPrice) zł</td>
+                                        <td class="center">@item.Amount</td>
+                                        <td class="text-center center">
+                                            <a class="waves-effect waves-light btn" asp-action="OrderDetails" asp-route-id="@item.IdOrder">Szczegóły</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!--col-->
+        </div><!--row-->
+    </div><!--conatiner-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+

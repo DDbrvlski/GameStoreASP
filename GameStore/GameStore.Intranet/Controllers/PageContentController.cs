@@ -1,163 +1,60 @@
 ﻿using GameStore.Data.Data;
 using GameStore.Data.Data.CMS;
+using GameStore.Data.Data.Shop;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Intranet.Controllers
 {
-    public class PageContentController : Controller
+    public class PageContentController : BaseController<PageContent>
     {
-        private readonly GameStoreContext _context;
         private readonly List<Page> _page;
-        public PageContentController(GameStoreContext context)
+        public PageContentController(GameStoreContext context) : base(context)
         {
-            _context = context;
             _page = _context.Page.ToList();
         }
-        // GET: PageContent
-        public async Task<IActionResult> Index()
+
+        public override Task<PageContent> CreateEntityWithImage(PageContent entity, IFormFile file)
         {
-            return _context.PageContent != null ?
-                        View(await _context.PageContent.ToListAsync()) :
-                        Problem("Entity set 'GameStoreContext2023.PageContent'  is null.");
+            throw new NotImplementedException();
         }
 
-        // GET: PageContent/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public override Task<PageContent> EditEntityWithImage(PageContent entity, IFormFile file)
         {
-            if (id == null || _context.PageContent == null)
-            {
-                return NotFound();
-            }
-
-            var pageContent = await _context.PageContent
-                .FirstOrDefaultAsync(m => m.IdPageContent == id);
-            if (pageContent == null)
-            {
-                return NotFound();
-            }
-
-            return View(pageContent);
+            throw new NotImplementedException();
         }
 
-        // GET: PageContent/Create
-        public IActionResult Create()
+        public override async Task<PageContent> GetEntity(int id)
         {
-            ViewBag.Pages = new SelectList(_page, "IdPage", "TitleLink");
-            return View();
+            return await _context.PageContent.Include(x => x.Page).FirstOrDefaultAsync(p => p.IdPageContent == id);
         }
 
-        // POST: PageContent/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdPageContent,Link,Icon,Title,Content,Description,Position,IdPage,Section")] PageContent pageContent)
+        public override async Task<int> GetEntityId(PageContent entity)
         {
-            ViewBag.Pages = new SelectList(_page, "IdPage", "TitleLink");
-            if (!ModelState.IsValid)
-            {
-                _context.Add(pageContent);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(pageContent);
+            return entity.IdPageContent;
         }
 
-        // GET: PageContent/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public override Task<List<PageContent>> GetEntityList()
         {
-            if (id == null || _context.PageContent == null)
-            {
-                return NotFound();
-            }
-
-            var pageContent = await _context.PageContent.FindAsync(id);
-            if (pageContent == null)
-            {
-                return NotFound();
-            }
-            ViewBag.Pages = new SelectList(_page, "IdPage", "TitleLink");
-            return View(pageContent);
+            return _context.PageContent.Include(x => x.Page).ToListAsync();
         }
 
-        // POST: PageContent/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdPageContent,Link,Icon,Title,Content,Description,Position,IdPage,Section")] PageContent pageContent)
+        public override async Task RemoveSelectedElement(int id)
         {
-            if (id != pageContent.IdPageContent)
-            {
-                return NotFound();
-            }
-            ViewBag.Pages = new SelectList(_page, "IdPage", "TitleLink");
-            if (!ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(pageContent);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PageContentExists(pageContent.IdPageContent))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(pageContent);
+            var item = await GetEntity(id);
+            _context.PageContent.Remove(item);
         }
 
-        // GET: PageContent/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        protected override bool EntityExists(int id)
         {
-            if (id == null || _context.PageContent == null)
-            {
-                return NotFound();
-            }
-
-            var pageContent = await _context.PageContent
-                .FirstOrDefaultAsync(m => m.IdPageContent == id);
-            if (pageContent == null)
-            {
-                return NotFound();
-            }
-
-            return View(pageContent);
+            return (_context.PageContent?.Any(x => x.IdPageContent == id)).GetValueOrDefault();
+        }
+        public override async Task SetSelectList()
+        {
+            ViewBag.Categories = new SelectList(_page, "IdPage", "Name");
         }
 
-        // POST: PageContent/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.PageContent == null)
-            {
-                return Problem("Entity set 'GameStoreContext2023.PageContent'  is null.");
-            }
-            var pageContent = await _context.PageContent.FindAsync(id);
-            if (pageContent != null)
-            {
-                _context.PageContent.Remove(pageContent);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool PageContentExists(int id)
-        {
-            return (_context.PageContent?.Any(e => e.IdPageContent == id)).GetValueOrDefault();
-        }
     }
 }
 

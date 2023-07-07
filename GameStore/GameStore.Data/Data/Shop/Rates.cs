@@ -11,6 +11,5 @@ namespace GameStore.Data.Data.Shop
         [Key]
         public int IdRate { get; set; }
         public string Rating { get; set; }
-        public bool IsActive { get; set; }
     }
 }

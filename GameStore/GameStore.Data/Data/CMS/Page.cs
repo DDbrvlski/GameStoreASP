@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GameStore.Data.Data.Helpers;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Data.Data.CMS
 {
-    public class Page
+    public class Page : BaseEntity
     {
         [Key] //to co niżej jest kluczem podstawowym tabeli
         public int IdPage { get; set; }

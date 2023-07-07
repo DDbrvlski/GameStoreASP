@@ -1,5 +1,8 @@
 using GameStore.Data;
 using GameStore.Data.Data;
+using GameStore.Data.Data.Account;
+using GameStore.PortalWWW.Models.BusinessLogic;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,9 +12,30 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<GameStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GameStoreContext") ?? throw new InvalidOperationException("Connection string 'GameStoreContext' not found.")));
 
-// Add services to the container.
+builder.Services.AddAuthentication("CookieAuth")
+    .AddCookie("CookieAuth", options =>
+    {
+        options.Cookie.Name = "GameStoreCookie";
+        options.ExpireTimeSpan = TimeSpan.FromDays(30);
+        options.Cookie.SameSite = SameSiteMode.Strict;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.SlidingExpiration = true;
+    });
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSession(options =>
+{
+    // Set a short timeout for easy testing.
+    options.IdleTimeout = TimeSpan.FromSeconds(3000);
+    options.Cookie.HttpOnly = true;
+    // Make the session cookie essential
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddScoped<AccountB>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -31,10 +55,11 @@ app.UseStaticFiles(new StaticFileOptions()
                 Path.Combine(Directory.GetCurrentDirectory(), @"./../GameStore.Intranet/wwwroot/images")),
     RequestPath = new PathString("/images")
 });
-app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseRouting();
+app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

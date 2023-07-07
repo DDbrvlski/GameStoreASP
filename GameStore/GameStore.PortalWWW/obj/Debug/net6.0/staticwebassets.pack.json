@@ -1,0 +1,165 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GameStore.PortalWWW.bundle.scp.css",
+      "PackagePath": "staticwebassets\\GameStore.PortalWWW.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\1.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\materialize"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\background1.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\background1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\background2.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\background2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\background3.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\background3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\cardbackground.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\cardbackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\contact.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\contact.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\css\\materialize.css",
+      "PackagePath": "staticwebassets\\lib\\materialize\\css\\materialize.css"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\css\\materialize.min.css",
+      "PackagePath": "staticwebassets\\lib\\materialize\\css\\materialize.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\js\\init.js",
+      "PackagePath": "staticwebassets\\lib\\materialize\\js\\init.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\js\\materialize.js",
+      "PackagePath": "staticwebassets\\lib\\materialize\\js\\materialize.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\js\\materialize.min.js",
+      "PackagePath": "staticwebassets\\lib\\materialize\\js\\materialize.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\login.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\login.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\mainbackground.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\mainbackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\news.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\news.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\newsbackground.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\newsbackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\person-icon.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\person-icon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\register.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\register.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Damian\\Desktop\\Zadania studia\\SEMESTR 6\\PIAB\\Projekt 1\\GameStore\\GameStore.PortalWWW\\wwwroot\\lib\\materialize\\sale.jpg",
+      "PackagePath": "staticwebassets\\lib\\materialize\\sale.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.GameStore.PortalWWW.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.GameStore.PortalWWW.props",
+      "PackagePath": "build\\GameStore.PortalWWW.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.GameStore.PortalWWW.props",
+      "PackagePath": "buildMultiTargeting\\GameStore.PortalWWW.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.GameStore.PortalWWW.props",
+      "PackagePath": "buildTransitive\\GameStore.PortalWWW.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
