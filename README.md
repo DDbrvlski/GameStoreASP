@@ -2,10 +2,9 @@
 "GameStore" internetowa aplikacja obsługująca sklep z grami, stworzona na potrzeby projektu szkolnego.
 
 Projekt składa się z trzech aplikacji:
-
-PortalWWW - Aplikacja internetowa dla klientów, umożliwia przeglądanie i zamawianie produktów.
-Intranet - Aplikacja internetowa dla pracowników, służy do zarządzania danymi i zamówieniami.
-Data - Biblioteka obsługująca bazę danych.
+- PortalWWW - Aplikacja internetowa dla klientów, umożliwia przeglądanie i zamawianie produktów.
+- Intranet - Aplikacja internetowa dla pracowników, służy do zarządzania danymi i zamówieniami.
+- Data - Biblioteka obsługująca bazę danych.
 
 ## Wykorzystane technologie:
 
